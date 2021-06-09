@@ -1,0 +1,31 @@
+.minus {
+  float: right;
+
+  width: 32px;
+  height: 32px;
+
+  @media (--phoneUp) {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.minus:before {
+  position: relative;
+  top: 16px;
+
+  display: block;
+
+  width: 32px;
+  height: 2px;
+
+  content: '';
+  background-color: var(--color-primary);
+
+  @media (--phoneUp) {
+    top: 20px;
+
+    width: 25px;
+    height: 1px;
+  }
+}

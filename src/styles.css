@@ -1,0 +1,162 @@
+/* fonts */
+@font-face {
+  font-family: 'Steinbeck';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./fonts/steinbeck-regular.woff2') format('woff2'),
+    url('./fonts/steinbeck-regular.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Steinbeck';
+  font-style: italic;
+  font-weight: normal;
+  src: url('./fonts/steinbeck-italic.woff2') format('woff2'),
+    url('./fonts/steinbeck-italic.woff') format('woff');
+  font-display: swap;
+}
+
+:root {
+  --color-primary: blue;
+  --color-secondary: rgb(255, 59, 106);
+  --main-font: 'Steinbeck', -apple-system, BlinkMacSystemFont,
+    'Apple Color Emoji', Arial, sans-serif;
+
+  --header: 24px/110% var(--main-font);
+  --subheader: 22px/110% var(--main-font);
+  --extra-large-text: 40px/100% var(--main-font);
+  --large-text: 24px/125% var(--main-font);
+  --text: 18px/125% var(--main-font);
+
+  @media (--phoneDown) {
+    --extra-large-text: 26px/100% var(--main-font);
+  }
+
+  @media (--smallPhoneDown) {
+    --header: 20px/110% var(--main-font);
+    --subheader: 17px/110% var(--main-font);
+    --extra-large-text: 20px/100% var(--main-font);
+    --large-text: 20px/125% var(--main-font);
+    --text: 14px/125% var(--main-font);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  @media (--phoneUp) {
+    scrollbar-color: transparent transparent;
+    scrollbar-width: thin;
+
+    /* not in standart, but so cute =) */
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &:hover {
+      scrollbar-color: blue transparent;
+    }
+  }
+}
+
+::selection {
+  color: white;
+  background-color: color-mod(var(--color-secondary) alpha(0.99));
+}
+
+.highlight {
+  @media (--phoneUp) {
+    box-shadow: 0px 0px 40px color-mod(var(--color-secondary) alpha(0.9));
+  }
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  font-family: 'Steinbeck', sans-serif;
+
+  background-color: var(--color-primary);
+  @media (--phoneUp) {
+    overflow: hidden;
+    background-color: white;
+  }
+}
+
+ul {
+  padding-left: 18px;
+  list-style: square outside none;
+}
+
+li {
+  padding: 6px 0;
+  font: var(--text);
+}
+
+p {
+  font: var(--text);
+
+  margin-block-start: 12px;
+  margin-block-end: 12px;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+h4,
+h5,
+h6 {
+  font: var(--subheader);
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3 {
+  font: var(--header);
+  font-weight: normal;
+}
+
+blockquote {
+  display: inline;
+  padding: 7px 10px 3px 10px;
+
+  margin: 0px;
+  font: var(--text);
+
+  border: 1px solid #000000;
+  border-radius: 39px;
+}
+
+h1 > blockquote,
+h2 > blockquote,
+h3 > blockquote,
+h4 > blockquote,
+h5 > blockquote,
+h6 > blockquote {
+  margin-left: 12px;
+}
+
+button:active {
+  outline: none;
+}
+
+/* accessible */
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+.focus-visible {
+  --color-primary: var(--color-secondary);
+  outline: none;
+}
+
+@import './layout/components/card/card.css';
+@import './layout/components/plus/plus.css';
+@import './layout/components/minus/minus.css';
+@import './layout/components/cross/cross.css';
+@import './layout/components/up/up.css';
+@import './layout/special.css';
+@import './layout/page.css';
