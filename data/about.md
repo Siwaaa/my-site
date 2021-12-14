@@ -1,5 +1,5 @@
 Привет! Я Андрей Сивцов — разработчик веб-приложений. Фанатею от оптимизаций, данных, аналитик. Программирую на TypeScript.
 
-[Telegram](https://t.me/aaawis) [GitHub](https://github.com/siwaaa)
+[Telegram](https://t.me/andy_webdev) [GitHub](https://github.com/siwaaa)
 
 Иногда выхожу подышать на балкон.
